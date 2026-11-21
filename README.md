@@ -67,6 +67,6 @@
 
 ### Run the GUI
 ```powershell
-git clone [https://github.com/YOUR_USERNAME/Win11Debloater.git](https://github.com/YOUR_USERNAME/Win11Debloater.git)
+git clone [https://github.com/salingaris/Win11Debloater.git
 cd Win11Debloater
 python debloat_gui.py
