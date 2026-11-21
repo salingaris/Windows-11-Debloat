@@ -1,0 +1,31 @@
+@echo off
+cd /d "%~dp0"
+
+:: Check if local .venv exists and launch with pythonw.exe (no background console)
+if exist ".venv\Scripts\pythonw.exe" (
+    start "" ".venv\Scripts\pythonw.exe" "debloat_gui.py"
+    exit /b
+)
+
+:: Fallback to .venv python.exe if pythonw.exe is missing
+if exist ".venv\Scripts\python.exe" (
+    start "" ".venv\Scripts\python.exe" "debloat_gui.py"
+    exit /b
+)
+
+:: Fallback to global Python (for users who clone from GitHub without a .venv)
+where pythonw >nul 2>&1
+if %errorlevel% equ 0 (
+    start "" pythonw "debloat_gui.py"
+    exit /b
+)
+
+where python >nul 2>&1
+if %errorlevel% equ 0 (
+    start "" python "debloat_gui.py"
+    exit /b
+)
+
+echo [ERROR] Python was not found on this system.
+echo Please install Python 3.10+ from https://www.python.org/downloads/
+pause

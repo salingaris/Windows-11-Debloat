@@ -1,0 +1,28 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# PyInstaller Build Artifacts
+build/
+dist/
+*.spec
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Windows OS Files
+Thumbs.db
+Desktop.ini
+*.log
